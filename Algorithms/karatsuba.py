@@ -1,4 +1,7 @@
 import math
+"""
+Basic implementation of karatsubas algorithm
+"""
 def karatsuba(x, y):
     if x < 10 and y < 10:
         return x*y
