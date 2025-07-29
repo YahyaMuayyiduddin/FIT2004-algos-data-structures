@@ -10,21 +10,31 @@ def merge_and_count(arr1, arr2):
     count = 0
     c1 = 0
     c2 = 0
-    final = []
+    index = 0
+    final = [None]* (len(arr1) + len(arr2))
     while c1 < len(arr1) and c2 < len(arr2):
         if arr1[c1] <=  arr2[c2]:
-            final.append(arr1[c1])
+
+            final[index] = arr1[c1]
             c1 += 1
+            index+= 1
         else:
-            final.append(arr2[c2])
+            final[index] = arr2[c2]
+            
             c2 += 1
             count += len(arr1) - c1
+            index+= 1
+
     while c1 < len(arr1):
-        final.append(arr1[c1])
+        final[index] = arr1[c1]
         c1 += 1
+        index+= 1
+
     while c2 < len(arr2):
-        final.append(arr2[c2])
+        final[index] = arr2[c2]
         c2 += 1
+        index+= 1
+
     return (final, count)
 
 
@@ -34,11 +44,7 @@ def countInversions(arr):
     Recurrence Relation for I(n): 
     2 * T(n/2) + cn for n > 1
     1               for n = 1 or n = 0
-
-
     """
-
-
     if len(arr) == 0:
         return (arr, 0)
     if len(arr) == 1:
@@ -52,3 +58,5 @@ def countInversions(arr):
         cont = merged[1] + left[1] + right[1]
         return (arr, cont)
 
+lst = [3,2,5,2,3,4]
+print(countInversions(lst)[1])
