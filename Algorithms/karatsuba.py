@@ -1,6 +1,7 @@
 import math
 """
 Basic implementation of karatsubas algorithm
+Time complexity = O(2^log2(3))
 """
 def karatsuba(x, y):
     if x < 10 and y < 10:
@@ -20,5 +21,5 @@ def karatsuba(x, y):
 x = 1531
 y = 3453
 res = karatsuba(x,y)
-assert res == x*y
+assert res == x * y
 print(res)

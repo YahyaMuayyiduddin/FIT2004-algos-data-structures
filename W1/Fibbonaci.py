@@ -1,4 +1,9 @@
 def fib_recursive(n):
+    """
+    Recursive fibonacci
+    Time complexity = O(2^n)
+    Space Complexity = (2^n)
+    """
     if n == 1:
         return 1
     if n == 2:
@@ -8,7 +13,11 @@ def fib_recursive(n):
 
 
 def fib_iterative(n):
-
+    """
+    Iterative fibonacci using tabulation
+    Time complexity = O(n)
+    space Complexity = O(1)
+    """
     prev = 0
     acc = 1
     for i in range(n-1):
