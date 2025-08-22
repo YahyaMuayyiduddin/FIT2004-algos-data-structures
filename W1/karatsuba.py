@@ -2,6 +2,10 @@ import math
 """
 Basic implementation of karatsubas algorithm
 Time complexity = O(2^log2(3))
+Space complexity:
+Recurrence relation:
+3 * T(n/2) + c
+1
 """
 def karatsuba(x, y):
     if x < 10 and y < 10:
